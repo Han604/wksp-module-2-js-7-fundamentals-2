@@ -48,7 +48,15 @@ const staffMembers = [
         },
     },
 ];
+function javaCheck(staffMembers) {
+    staffMembers.forEach(staff => {
+        if (staffMembers.name === 'Chuck Taylor') {
+            console.log(staffMembers.skillLevels.javascript);
+        }
+    });
+} 
 
+console.log(javaCheck)
 // We need you to write a script that will print someone's JavaScript ability level.
 // Write a line that will print the JavaScript level for employee Chuck Taylor.
 

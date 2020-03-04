@@ -54,8 +54,8 @@ const staffMembers = [
 
 // You will need both Array and Object syntax.
 
-staffMembers.forEach(member => {
-    if (member.name === 'Chuck Taylor') {
-        console.log(member.skillLevels.javascript);
+staffMembers.forEach(staff => {
+    if (staff.name === 'Chuck Taylor') {
+        console.log(staff.skillLevels.javascript);
     }
 });

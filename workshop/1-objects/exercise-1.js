@@ -19,6 +19,23 @@
 // A) console.log() your object.
 // B) console.log() a few of the values in the object.
 
+// var myObject = {
+//     name: {
+//         first: 'Eric',
+//         last: 'Han',
+//     },
+//     age: '25',
+//     city: 'Vancouver',
+//     siblings: 1,
+//     petName: 'Hershey',
+//     monthOfBirth: 'March'
+// }
+
+// console.log(myObject);
+// console.log(myObject.name);
+// console.log(myObject.age);
+// console.log(myObject.petName);
+
 //-------------------------------------------------
 
 // Exercise 1.1
@@ -31,6 +48,21 @@
 //     - Pets (number of pets, names of pets, etc.)
 
 // HINT: You can just modify the object that you created before.
+
+var myObject = {
+    name: {
+        first: 'Eric',
+        last: 'Han',
+    },
+    age: '25',
+    city: 'Vancouver',
+    siblings: 1,
+    petName: 'Hershey',
+    monthOfBirth: 'March',
+    faveShow: 'Keep your hands off Eizouken',
+    faveFoodCulture: 'Korean food',
+    favePopSong: 'Vroom Vroom'
+}
 
 //-------------------------------------------------
 
@@ -48,7 +80,17 @@
 // represent a collection of similar things?
 
 var favoriteMovie = {
-
+    title: 'Parasite',
+    director: 'Bong Joon Ho',
+    yearReleased: '2019',
+    rating: '8.6'
+    Actors: {
+        'Kim Ki-Taek':'Kang-ho Song',
+        'Park Dong-ik':'Sun Kyun Lee',
+        'Park Yeon-kyo':'Yo-jeong Jo',
+        'Kim Ki-woo':'Woo-sik Choi',
+        'Kim Ki-jung':'So-dam Park'
+    }
 }
 
 
@@ -65,7 +107,7 @@ const person = {
     hometown: "somewhere"
 };
 
-person[age];    // => 26
+person.age;    // => 26
 person.key;     // => "Alyssa P. Hacker"
 
 
@@ -90,7 +132,7 @@ const alyssa = {
 
 function fullName(person) {
     // Your code here
-
+    console.log(`${person.name.first} ${person.name.middle} ${person.name.last}`);
 }
 
 console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
@@ -115,6 +157,7 @@ const rick = {
 
 function betterFullName(person) {
     // Your code here
+    return `${person.name.first} ${person.name.middle||''} ${person.name.last}`;
 
 }
 

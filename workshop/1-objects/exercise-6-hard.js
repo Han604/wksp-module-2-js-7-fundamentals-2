@@ -19,6 +19,21 @@ var favoriteDessert = {
     melissa: 'profiteroles',
 };
 
+//create a function that counts the amount of votes each dessert in the object has
+// let dessValue = Object.values(favoriteDessert);
+// dessValue.forEach(dessert => {
+//     counter = 0;
+//     dessValue.forEach(duplicate => {
+//         if (duplicate === dessert) {
+//             counter += 1;
+//         }
+//     })
+//     tempObject[dessert] = counter
+// });
+// console.log(dessValue + ' dessValue');
+// console.log(tempObject);
+
+
 // Above is an object with the results of a poll.
 // Write a script that outputs the following:
 
@@ -27,6 +42,47 @@ var favoriteDessert = {
 // e.g. 1. <DESSERT_NAME>
 //      2. <DESSERT_NAME>
 //      ...
+
+const dessertsArray = Object.values(favoriteDessert).sort();
+console.log(dessertsArray)
+const countedDesserts = {};
+const rankedDesserts = [];
+
+dessertsArray.forEach(dessert => {
+    let count = 0;
+    dessertsArray.forEach (dup => {
+        if (dessert === dup) count +=1;
+    });
+    countedDesserts[dessert] = count;
+})
+
+Object.values(countedDesserts).forEach((dessertCount, id) => {
+    const dessertName = Object.keys(countedDesserts)[id];
+    rankedDesserts.push({
+        dessertName: dessertName,
+        dessertCount: dessertCount
+    });
+});
+rankedDesserts.sort((a, b) => a.dessertCount < b.dessertCount ? 1 : -1);
+rankedDesserts.forEach((item, id) => {
+    console.log( `${id + 1}. ${item.dessertName}`);
+})
+
+console.log(countedDesserts)
+
+Object.keys(countedDesserts).forEach(dessert => {
+    //checking each dessert from the countedDesserts object with...
+    let names = [];
+    Object.keys(favoriteDessert).forEach(name=> {
+        //the desserts from the favoriteDessert array
+        if (favoriteDessert[name] === dessert) {
+            //if the dessert[var name] === dessert push name to array, then join and console log.
+            names.push(name);
+        }
+    });
+    console.log(`${dessert}: ${names.join(', ')}`);
+});
+
 
 
 // B)
